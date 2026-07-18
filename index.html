@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4efe6">
-  <meta name="description" content="Portfolio profesional de Aarón Fernández Ramón, ingeniero informático especializado en inteligencia artificial, visión por computador y sistemas de datos.">
+  <meta name="description" content="Portfolio profesional de Aarón Fernández Ramón, ingeniero informático especializado en visión por computador, modelos visión-lenguaje y sistemas de agentes de inteligencia artificial.">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Aarón Fernández Ramón — Ingeniería informática e IA">
   <meta property="og:description" content="Modelos de inteligencia artificial convertidos en sistemas fiables, medibles y útiles.">
@@ -30,6 +30,9 @@
       "Deep learning",
       "Segmentación panóptica",
       "Detección de objetos",
+      "Modelos visión-lenguaje",
+      "Agentes de inteligencia artificial",
+      "IA generativa",
       "Análisis de datos",
       "GIS"
     ]
@@ -244,6 +247,46 @@
 
     .nav-cta:hover {
       background: var(--accent-dark);
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.15rem;
+      padding: 0.2rem;
+      background: rgba(255, 255, 255, 0.38);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+
+    .language-switcher button {
+      min-width: 2.15rem;
+      min-height: 2rem;
+      padding: 0.2rem 0.5rem;
+      color: var(--ink-soft);
+      background: transparent;
+      border: 0;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 780;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: color 180ms ease, background 180ms ease;
+    }
+
+    .language-switcher button:hover {
+      color: var(--ink);
+    }
+
+    .language-switcher button[aria-pressed="true"] {
+      color: #fff;
+      background: var(--ink);
     }
 
     .menu-button {
@@ -1373,6 +1416,15 @@
         font-size: 0.72rem;
       }
 
+      .nav-controls {
+        gap: 0.45rem;
+      }
+
+      .language-switcher button {
+        min-width: 2rem;
+        padding-inline: 0.38rem;
+      }
+
       h1 {
         font-size: clamp(3.2rem, 17vw, 5.2rem);
       }
@@ -1428,6 +1480,12 @@
         align-items: flex-start;
         flex-direction: column;
         gap: 0.6rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .brand-name {
+        display: none;
       }
     }
 
@@ -1503,15 +1561,8 @@
     <nav class="nav shell" aria-label="Navegación principal">
       <a class="brand" href="#inicio" aria-label="Aarón Fernández, volver al inicio">
         <span class="brand-mark" aria-hidden="true">AF</span>
-        <span>Aarón Fernández</span>
+        <span class="brand-name">Aarón Fernández</span>
       </a>
-
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">
-        <span class="sr-only">Abrir menú</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16"/>
-        </svg>
-      </button>
 
       <ul class="nav-links" id="nav-links">
         <li><a href="#perfil">Perfil</a></li>
@@ -1520,23 +1571,36 @@
         <li><a href="#capacidades">Capacidades</a></li>
         <li><a class="nav-cta" href="#contacto">Hablemos</a></li>
       </ul>
+
+      <div class="nav-controls">
+        <div class="language-switcher" role="group" aria-label="Seleccionar idioma">
+          <button type="button" data-language="es" aria-pressed="true" lang="es">ES</button>
+          <button type="button" data-language="en" aria-pressed="false" lang="en">EN</button>
+        </div>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Abrir menú</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
     </nav>
   </header>
 
   <main id="contenido">
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Ingeniería informática · Inteligencia artificial</p>
+        <p class="eyebrow">Ingeniería informática · IA aplicada y multimodal</p>
         <h1 id="hero-title">Tecnología con <span class="warm-word">criterio.</span></h1>
         <p class="hero-intro">
-          Soy <strong>Aarón Fernández Ramón</strong>. Diseño sistemas de inteligencia artificial que transforman visión, datos y software en soluciones fiables para problemas reales.
+          Soy <strong>Aarón Fernández Ramón</strong>. Diseño sistemas de inteligencia artificial que conectan visión por computador, modelos multimodales, agentes, datos y software para resolver problemas reales.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="#proyectos">
             Ver trabajo seleccionado
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg>
           </a>
-          <a class="button button-secondary" href="assets/curriculum-aaron-fernandez.pdf" download>
+          <a class="button button-secondary" href="assets/curriculum-aaron-fernandez.pdf" download="curriculum-aaron-fernandez.pdf" data-download-es="assets/curriculum-aaron-fernandez.pdf" data-download-en="assets/curriculum-aaron-fernandez-en.pdf" data-filename-es="curriculum-aaron-fernandez.pdf" data-filename-en="curriculum-aaron-fernandez-en.pdf">
             Descargar currículum
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/></svg>
           </a>
@@ -1557,7 +1621,7 @@
         <ul class="trust-list">
           <li>Visión por computador</li>
           <li>Deep learning</li>
-          <li>Sistemas de datos</li>
+          <li>VLMs y agentes IA</li>
           <li>GIS</li>
         </ul>
       </div>
@@ -1571,8 +1635,8 @@
 
       <div class="about-grid">
         <div class="letter reveal">
-          <p>Combino una base sólida de ingeniería informática con especialización en inteligencia artificial. Mi trabajo se centra en construir modelos de visión por computador y conectarlos con pipelines, datos y herramientas que permitan utilizarlos de verdad.</p>
-          <p>Me interesa la tecnología cuando es rigurosa y útil: entender el problema, medir la incertidumbre, optimizar el rendimiento y entregar una solución mantenible.</p>
+          <p>Combino una base sólida de ingeniería informática con especialización en inteligencia artificial. Construyo sistemas de visión por computador, modelos visión-lenguaje y agentes con memoria, conectándolos con pipelines, datos y herramientas que permitan utilizarlos de verdad.</p>
+          <p>Mi experiencia abarca desde inspección automatizada de infraestructuras e inventarios urbanos hasta validación contextual de imágenes, seguimiento ocular y productos web con IA. Me interesa la tecnología cuando es rigurosa, interpretable y útil.</p>
         </div>
 
         <dl class="principles reveal">
@@ -1610,6 +1674,7 @@
               <p class="project-description">Sistema desarrollado como TFG para analizar escenas urbanas desde un vehículo en circulación. Integra segmentación de instancias, segmentación semántica y clasificación en un pipeline asíncrono orientado a tiempo real.</p>
               <ul class="proof-list" aria-label="Resultados y tecnologías">
                 <li>3.er Premio al Mejor TFG de Ingeniería Informática UIB · 2025</li>
+                <li>Difusión en Última Hora e IB3 Ràdio · 2026</li>
                 <li>20 FPS</li>
                 <li>YOLOv8-seg · DeepLabv3+ · YOLOv8</li>
                 <li>Python · PyTorch · NumPy</li>
@@ -1619,6 +1684,14 @@
                   Ver proyecto en GitHub
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg>
                 </a>
+                <a class="project-link" href="https://www.ultimahora.es/noticias/local/2026/04/22/2613893/inteligencia-artificial-aplicada-seguridad-vial.html" target="_blank" rel="noreferrer">
+                  Entrevista en Última Hora
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg>
+                </a>
+                <a class="project-link" href="https://totib3.org/radio/aldiamallorca/e20260504120401" target="_blank" rel="noreferrer">
+                  Entrevista en IB3 Ràdio
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg>
+                </a>
               </div>
             </div>
           </article>
@@ -1626,16 +1699,16 @@
           <article class="project reveal">
             <div class="project-meta">
               <span class="project-index">02</span>
-              <span class="project-tag">Trabajo profesional</span>
+              <span class="project-tag">TFM · Visión artificial</span>
             </div>
             <div>
-              <h3>Visión artificial aplicada a entornos urbanos</h3>
-              <p class="project-description">En Gemminis diseño e implemento modelos de segmentación semántica, de instancias y panóptica, junto con detección de objetos. Desarrollo técnicas de postprocesamiento para accesibilidad, reducción de falsos positivos, geolocalización, análisis espacio-temporal y nubes de puntos.</p>
-              <ul class="proof-list" aria-label="Áreas técnicas">
+              <h3>Segmentación panóptica para inventarios urbanos</h3>
+              <p class="project-description">Trabajo de Fin de Máster desarrollado en la Universidad Alfonso X el Sabio. Sistema capaz de identificar, segmentar y clasificar elementos de la vía pública para automatizar inventarios urbanos y detectar defectos en infraestructuras mediante análisis visual avanzado.</p>
+              <ul class="proof-list" aria-label="Objetivos y tecnologías">
                 <li>Segmentación panóptica</li>
-                <li>Eliminación de falsos positivos</li>
-                <li>QGIS · nubes de puntos</li>
-                <li>Python · PostgreSQL</li>
+                <li>Inventarios urbanos</li>
+                <li>Detección de defectos</li>
+                <li>Python · PyTorch · Computer Vision</li>
               </ul>
             </div>
           </article>
@@ -1643,6 +1716,91 @@
           <article class="project reveal">
             <div class="project-meta">
               <span class="project-index">03</span>
+              <span class="project-tag">IA multimodal</span>
+            </div>
+            <div>
+              <h3>VLM para validación contextual de imágenes</h3>
+              <p class="project-description">Diseño y entrenamiento de un modelo visión-lenguaje especializado en validar detecciones mediante razonamiento visual. El sistema analiza la evidencia disponible, determina la validez de cada caso y genera justificaciones contextuales e interpretables.</p>
+              <ul class="proof-list" aria-label="Capacidades y tecnologías">
+                <li>Vision-Language Models</li>
+                <li>Razonamiento visual</li>
+                <li>Explicaciones interpretables</li>
+                <li>Python · Deep Learning</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-meta">
+              <span class="project-index">04</span>
+              <span class="project-tag">Agentes IA</span>
+            </div>
+            <div>
+              <h3>Ecosistema de IA con memoria persistente</h3>
+              <p class="project-description">Ecosistema de agentes capaz de conservar conocimiento entre interacciones mediante memoria persistente, recuperación contextual y estructuración dinámica de la información. El proyecto evoluciona hacia flujos de decisión avanzados, herramientas externas y capacidades multimodales.</p>
+              <ul class="proof-list" aria-label="Capacidades y tecnologías">
+                <li>Memoria persistente</li>
+                <li>Recuperación contextual</li>
+                <li>Flujos de decisión</li>
+                <li>Python · Agentes IA · Retrieval</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-meta">
+              <span class="project-index">05</span>
+              <span class="project-tag">Deep learning</span>
+            </div>
+            <div>
+              <h3>Eye-tracking basado en inteligencia artificial</h3>
+              <p class="project-description">Sistema personal de seguimiento ocular mediante deep learning. Incorpora modelos de IA generativa para mejorar la calidad de imagen y técnicas de preprocesamiento y posprocesamiento orientadas a aumentar la precisión, la estabilidad y la fiabilidad del análisis visual.</p>
+              <ul class="proof-list" aria-label="Capacidades y tecnologías">
+                <li>Seguimiento ocular</li>
+                <li>IA generativa</li>
+                <li>Preprocesamiento y posprocesamiento</li>
+                <li>Python · Deep Learning</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-meta">
+              <span class="project-index">06</span>
+              <span class="project-tag">Producto web + IA</span>
+            </div>
+            <div>
+              <h3>Prototipos y aplicaciones web inteligentes</h3>
+              <p class="project-description">Diseño y desarrollo de prototipos web con interfaces interactivas, sistemas de gestión de información y funcionalidades basadas en inteligencia artificial. Exploro la conexión entre modelos inteligentes, servicios backend y experiencias de usuario accesibles desde la web.</p>
+              <ul class="proof-list" aria-label="Áreas técnicas">
+                <li>Interfaces interactivas</li>
+                <li>Integración de IA</li>
+                <li>Servicios backend</li>
+                <li>React · APIs</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-meta">
+              <span class="project-index">07</span>
+              <span class="project-tag">Trabajo profesional</span>
+            </div>
+            <div>
+              <h3>Visión artificial aplicada a entornos urbanos</h3>
+              <p class="project-description">En Gemminis diseño e implemento sistemas de segmentación semántica, de instancias y panóptica, junto con detección de objetos. Estas soluciones se aplican a inspección automatizada de infraestructuras, estimación de altura de sistemas de contención viaria y análisis de posibles colisiones ferroviarias mediante gálibos virtuales.</p>
+              <ul class="proof-list" aria-label="Áreas técnicas">
+                <li>Segmentación panóptica</li>
+                <li>Inspección automatizada</li>
+                <li>Sistemas de contención viaria</li>
+                <li>Gálibos virtuales ferroviarios</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-meta">
+              <span class="project-index">08</span>
               <span class="project-tag">Full stack</span>
             </div>
             <div>
@@ -1681,10 +1839,10 @@
                 <h3>Gemminis</h3>
                 <p class="timeline-role">Programador y técnico de inteligencia artificial</p>
                 <ul>
-                  <li>Desarrollo de modelos de segmentación y detección para entornos urbanos.</li>
-                  <li>Postprocesamiento orientado a accesibilidad, geolocalización, reducción de falsos positivos y análisis espacio-temporal.</li>
-                  <li>Transformación y análisis de datos con Python y PostgreSQL.</li>
-                  <li>Adaptación y optimización de modelos según los requisitos de cada proyecto.</li>
+                  <li>Diseño de sistemas de visión artificial con segmentación semántica, de instancias y panóptica, además de detección de objetos.</li>
+                  <li>Inspección automatizada: estimación de altura de sistemas de contención viaria y análisis de colisiones ferroviarias mediante gálibos virtuales.</li>
+                  <li>Modelos VLM personalizados para validación contextual de imágenes y generación de justificaciones interpretables.</li>
+                  <li>Ecosistemas de agentes con memoria persistente, recuperación contextual y toma de decisiones dinámica.</li>
                 </ul>
               </div>
             </li>
@@ -1766,6 +1924,10 @@
             <li>Deep Learning</li>
             <li>Computer Vision</li>
             <li>LLMs</li>
+            <li>Vision-Language Models</li>
+            <li>Agentes IA</li>
+            <li>IA generativa</li>
+            <li>Retrieval</li>
             <li>Segmentación</li>
             <li>Detección de objetos</li>
             <li>Análisis de datos</li>
@@ -1788,10 +1950,12 @@
               <li>Java</li>
               <li>SQL</li>
               <li>JavaScript</li>
+              <li>PHP</li>
               <li>HTML / CSS</li>
               <li>C / C++</li>
               <li>Go</li>
               <li>R</li>
+              <li>MATLAB</li>
             </ul>
           </div>
           <div class="skill-block">
@@ -1803,11 +1967,14 @@
               <li>React</li>
               <li>Spring Boot</li>
               <li>Flask</li>
+              <li>Jinja2</li>
               <li>Jupyter</li>
               <li>RabbitMQ</li>
               <li>APIs</li>
               <li>Postman</li>
-              <li>Agile</li>
+              <li>LaTeX</li>
+              <li>Jira</li>
+              <li>Agile · Scrum · Kanban</li>
             </ul>
           </div>
         </div>
@@ -1865,12 +2032,285 @@
       const navLinks = document.querySelector('.nav-links');
       const menuLabel = menuButton?.querySelector('.sr-only');
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const languageButtons = [...document.querySelectorAll('[data-language]')];
+      const downloadLink = document.querySelector('[data-download-es][data-download-en]');
+
+      const english = {
+        'Saltar al contenido': 'Skip to content',
+        'Abrir menú': 'Open menu',
+        'Perfil': 'Profile',
+        'Proyectos': 'Projects',
+        'Experiencia': 'Experience',
+        'Capacidades': 'Expertise',
+        'Hablemos': 'Let’s talk',
+        'Ingeniería informática · IA aplicada y multimodal': 'Computer engineering · Applied and multimodal AI',
+        'Tecnología con': 'Technology with',
+        'criterio.': 'purpose.',
+        'Soy': 'I’m',
+        '. Diseño sistemas de inteligencia artificial que conectan visión por computador, modelos multimodales, agentes, datos y software para resolver problemas reales.': '. I design artificial intelligence systems that connect computer vision, multimodal models, agents, data and software to solve real-world problems.',
+        'Ver trabajo seleccionado': 'View selected work',
+        'Descargar currículum': 'Download résumé',
+        '3.er premio TFG · UIB · 2025': '3rd thesis prize · UIB · 2025',
+        'Especialización': 'Expertise',
+        'Visión por computador': 'Computer vision',
+        'VLMs y agentes IA': 'VLMs and AI agents',
+        '01 · Perfil': '01 · Profile',
+        'De la investigación al sistema que funciona.': 'From research to systems that work.',
+        'Combino una base sólida de ingeniería informática con especialización en inteligencia artificial. Construyo sistemas de visión por computador, modelos visión-lenguaje y agentes con memoria, conectándolos con pipelines, datos y herramientas que permitan utilizarlos de verdad.': 'I combine a solid computer engineering foundation with a specialisation in artificial intelligence. I build computer vision systems, vision-language models and memory-enabled agents, connecting them to pipelines, data and tools that make them genuinely usable.',
+        'Mi experiencia abarca desde inspección automatizada de infraestructuras e inventarios urbanos hasta validación contextual de imágenes, seguimiento ocular y productos web con IA. Me interesa la tecnología cuando es rigurosa, interpretable y útil.': 'My experience ranges from automated infrastructure inspection and urban inventories to contextual image validation, eye tracking and AI-powered web products. I value technology when it is rigorous, interpretable and useful.',
+        'Rigor técnico': 'Technical rigour',
+        'Decisiones basadas en datos, métricas y validación.': 'Decisions grounded in data, metrics and validation.',
+        'Visión de sistema': 'Systems thinking',
+        'Modelos, software, infraestructura y usuario como un todo.': 'Models, software, infrastructure and users considered as a whole.',
+        'Impacto práctico': 'Practical impact',
+        'Soluciones que funcionan bajo restricciones reales.': 'Solutions that work under real-world constraints.',
+        '02 · Trabajo seleccionado': '02 · Selected work',
+        'Trabajo donde la IA resuelve, no decora.': 'Work where AI solves problems, not just decorates.',
+        'Visión artificial': 'Computer vision',
+        'Detección de riesgos para peatones en tiempo real': 'Real-time pedestrian risk detection',
+        'Sistema desarrollado como TFG para analizar escenas urbanas desde un vehículo en circulación. Integra segmentación de instancias, segmentación semántica y clasificación en un pipeline asíncrono orientado a tiempo real.': 'A bachelor’s thesis system for analysing urban scenes from a moving vehicle. It combines instance segmentation, semantic segmentation and classification in an asynchronous real-time pipeline.',
+        '3.er Premio al Mejor TFG de Ingeniería Informática UIB · 2025': '3rd Prize for Best Computer Engineering Thesis at UIB · 2025',
+        'Difusión en Última Hora e IB3 Ràdio · 2026': 'Featured by Última Hora and IB3 Ràdio · 2026',
+        'Ver proyecto en GitHub': 'View project on GitHub',
+        'Entrevista en Última Hora': 'Interview in Última Hora',
+        'Entrevista en IB3 Ràdio': 'Interview on IB3 Ràdio',
+        'TFM · Visión artificial': 'Master’s thesis · Computer vision',
+        'Segmentación panóptica para inventarios urbanos': 'Panoptic segmentation for urban inventories',
+        'Trabajo de Fin de Máster desarrollado en la Universidad Alfonso X el Sabio. Sistema capaz de identificar, segmentar y clasificar elementos de la vía pública para automatizar inventarios urbanos y detectar defectos en infraestructuras mediante análisis visual avanzado.': 'A master’s thesis developed at Universidad Alfonso X el Sabio. The system identifies, segments and classifies public-road elements to automate urban inventories and detect infrastructure defects through advanced visual analysis.',
+        'Segmentación panóptica': 'Panoptic segmentation',
+        'Inventarios urbanos': 'Urban inventories',
+        'Detección de defectos': 'Defect detection',
+        'IA multimodal': 'Multimodal AI',
+        'VLM para validación contextual de imágenes': 'VLM for contextual image validation',
+        'Diseño y entrenamiento de un modelo visión-lenguaje especializado en validar detecciones mediante razonamiento visual. El sistema analiza la evidencia disponible, determina la validez de cada caso y genera justificaciones contextuales e interpretables.': 'Design and training of a vision-language model specialised in validating detections through visual reasoning. The system analyses available evidence, determines each case’s validity and produces contextual, interpretable explanations.',
+        'Razonamiento visual': 'Visual reasoning',
+        'Explicaciones interpretables': 'Interpretable explanations',
+        'Agentes IA': 'AI agents',
+        'Ecosistema de IA con memoria persistente': 'AI ecosystem with persistent memory',
+        'Ecosistema de agentes capaz de conservar conocimiento entre interacciones mediante memoria persistente, recuperación contextual y estructuración dinámica de la información. El proyecto evoluciona hacia flujos de decisión avanzados, herramientas externas y capacidades multimodales.': 'An agent ecosystem that retains knowledge across interactions through persistent memory, contextual retrieval and dynamic information structuring. The project is evolving towards advanced decision flows, external tools and multimodal capabilities.',
+        'Memoria persistente': 'Persistent memory',
+        'Recuperación contextual': 'Contextual retrieval',
+        'Flujos de decisión': 'Decision flows',
+        'Python · Agentes IA · Retrieval': 'Python · AI agents · Retrieval',
+        'Eye-tracking basado en inteligencia artificial': 'AI-powered eye tracking',
+        'Sistema personal de seguimiento ocular mediante deep learning. Incorpora modelos de IA generativa para mejorar la calidad de imagen y técnicas de preprocesamiento y posprocesamiento orientadas a aumentar la precisión, la estabilidad y la fiabilidad del análisis visual.': 'A personal deep-learning eye-tracking system. It incorporates generative AI models to improve image quality and preprocessing and post-processing techniques to increase the accuracy, stability and reliability of visual analysis.',
+        'Seguimiento ocular': 'Eye tracking',
+        'IA generativa': 'Generative AI',
+        'Preprocesamiento y posprocesamiento': 'Preprocessing and post-processing',
+        'Producto web + IA': 'Web product + AI',
+        'Prototipos y aplicaciones web inteligentes': 'Intelligent web prototypes and applications',
+        'Diseño y desarrollo de prototipos web con interfaces interactivas, sistemas de gestión de información y funcionalidades basadas en inteligencia artificial. Exploro la conexión entre modelos inteligentes, servicios backend y experiencias de usuario accesibles desde la web.': 'Design and development of web prototypes with interactive interfaces, information-management systems and AI-powered features. I explore the connection between intelligent models, backend services and accessible web user experiences.',
+        'Interfaces interactivas': 'Interactive interfaces',
+        'Integración de IA': 'AI integration',
+        'Servicios backend': 'Backend services',
+        'Trabajo profesional': 'Professional work',
+        'Visión artificial aplicada a entornos urbanos': 'Computer vision applied to urban environments',
+        'En Gemminis diseño e implemento sistemas de segmentación semántica, de instancias y panóptica, junto con detección de objetos. Estas soluciones se aplican a inspección automatizada de infraestructuras, estimación de altura de sistemas de contención viaria y análisis de posibles colisiones ferroviarias mediante gálibos virtuales.': 'At Gemminis, I design and implement semantic, instance and panoptic segmentation systems alongside object detection. These solutions support automated infrastructure inspection, road-restraint height estimation and railway collision analysis using virtual clearance gauges.',
+        'Inspección automatizada': 'Automated inspection',
+        'Sistemas de contención viaria': 'Road restraint systems',
+        'Gálibos virtuales ferroviarios': 'Virtual railway clearance gauges',
+        'Plataforma web para una competición de inteligencias artificiales capaces de debatir sobre distintos temas. Arquitectura completa con frontend React, backend Spring Boot, base de datos relacional e integración de APIs externas.': 'A web platform for a competition between artificial intelligences capable of debating different topics. It features a complete architecture with a React frontend, Spring Boot backend, relational database and external API integrations.',
+        'APIs · base de datos relacional': 'APIs · relational database',
+        '03 · Trayectoria': '03 · Career',
+        'Experiencia que une software, modelos y datos.': 'Experience connecting software, models and data.',
+        'Abr. 2025': 'Apr. 2025',
+        '— Actualidad': '— Present',
+        'Programador y técnico de inteligencia artificial': 'Software developer and artificial intelligence specialist',
+        'Diseño de sistemas de visión artificial con segmentación semántica, de instancias y panóptica, además de detección de objetos.': 'Design of computer vision systems using semantic, instance and panoptic segmentation, as well as object detection.',
+        'Inspección automatizada: estimación de altura de sistemas de contención viaria y análisis de colisiones ferroviarias mediante gálibos virtuales.': 'Automated inspection: road-restraint height estimation and railway collision analysis using virtual clearance gauges.',
+        'Modelos VLM personalizados para validación contextual de imágenes y generación de justificaciones interpretables.': 'Custom VLMs for contextual image validation and the generation of interpretable explanations.',
+        'Ecosistemas de agentes con memoria persistente, recuperación contextual y toma de decisiones dinámica.': 'Agent ecosystems with persistent memory, contextual retrieval and dynamic decision-making.',
+        'Experiencia adicional': 'Additional experience',
+        'Jul. 2023 — Actualidad': 'Jul. 2023 — Present',
+        'Cajero y reponedor': 'Cashier and stock clerk',
+        'Atención al cliente, tareas de almacén, gestión de equipo y trabajo bajo presión en domingos y festivos.': 'Customer service, warehouse duties, team coordination and working under pressure on Sundays and public holidays.',
+        'Jun. — Ago. 2022': 'Jun. — Aug. 2022',
+        'Cajero': 'Cashier',
+        'Atención al cliente y labores de almacén.': 'Customer service and warehouse duties.',
+        'Jun. — Sep. 2021': 'Jun. — Sep. 2021',
+        'Auxiliar de cocina y mozo': 'Kitchen assistant and crew member',
+        'Preparación, limpieza, mantenimiento y trabajo en equipo bajo presión.': 'Food preparation, cleaning, maintenance and teamwork under pressure.',
+        'Formación': 'Education',
+        'En curso · finalización prevista julio 2026': 'In progress · expected completion July 2026',
+        'Máster en Inteligencia Artificial': 'Master’s Degree in Artificial Intelligence',
+        'Grado en Ingeniería Informática': 'Bachelor’s Degree in Computer Engineering',
+        'Universidad de las Islas Baleares · Palma': 'University of the Balearic Islands · Palma',
+        'Certificados': 'Certificates',
+        'IBM · Jul. 2024': 'IBM · Jul. 2024',
+        'Hugging Face · Ago. 2025': 'Hugging Face · Aug. 2025',
+        'Idiomas y otros datos': 'Languages and additional information',
+        'Español': 'Spanish',
+        'Nativo': 'Native',
+        'Catalán': 'Catalan',
+        'Inglés': 'English',
+        'Alemán': 'German',
+        'Básico': 'Basic',
+        'Permiso de conducir': 'Driving licence',
+        '04 · Capacidades': '04 · Expertise',
+        'Un perfil técnico de extremo a extremo.': 'An end-to-end technical profile.',
+        'Especialización principal': 'Core expertise',
+        'IA aplicada y visión por computador.': 'Applied AI and computer vision.',
+        'Segmentación': 'Segmentation',
+        'Detección de objetos': 'Object detection',
+        'Análisis de datos': 'Data analysis',
+        'Estadística': 'Statistics',
+        'Bases de datos': 'Databases',
+        'Lenguajes y librerías': 'Languages and libraries',
+        'Ingeniería y herramientas': 'Engineering and tools',
+        '05 · Contacto': '05 · Contact',
+        'Construyamos algo que merezca funcionar.': 'Let’s build something worth relying on.',
+        'Si buscas un perfil que conecte inteligencia artificial, ingeniería de software y datos con una mirada práctica, estaré encantado de conocer el reto.': 'If you need someone who connects artificial intelligence, software engineering and data with a practical mindset, I’d be glad to learn about the challenge.',
+        'Escribir un correo': 'Send an email',
+        'Copiar dirección': 'Copy address',
+        'Aarón Fernández Ramón · Diseñado para comunicar con claridad y confianza.': 'Aarón Fernández Ramón · Designed to communicate with clarity and confidence.',
+        'Volver arriba': 'Back to top'
+      };
+
+      const attributeTranslations = {
+        'Navegación principal': 'Main navigation',
+        'Aarón Fernández, volver al inicio': 'Aarón Fernández, back to home',
+        'Seleccionar idioma': 'Select language',
+        'Áreas de especialización': 'Areas of expertise',
+        'Resultados y tecnologías': 'Results and technologies',
+        'Objetivos y tecnologías': 'Goals and technologies',
+        'Capacidades y tecnologías': 'Capabilities and technologies',
+        'Áreas técnicas': 'Technical areas',
+        'Tecnologías': 'Technologies',
+        'Perfiles profesionales': 'Professional profiles'
+      };
+
+      const metadata = {
+        es: {
+          title: 'Aarón Fernández Ramón — Ingeniería informática e IA',
+          description: 'Portfolio profesional de Aarón Fernández Ramón, ingeniero informático especializado en visión por computador, modelos visión-lenguaje y sistemas de agentes de inteligencia artificial.',
+          ogDescription: 'Modelos de inteligencia artificial convertidos en sistemas fiables, medibles y útiles.',
+          locale: 'es_ES',
+          jobTitle: 'Ingeniero informático y técnico de inteligencia artificial',
+          knowsAbout: ['Inteligencia artificial', 'Visión por computador', 'Deep learning', 'Segmentación panóptica', 'Detección de objetos', 'Modelos visión-lenguaje', 'Agentes de inteligencia artificial', 'IA generativa', 'Análisis de datos', 'GIS']
+        },
+        en: {
+          title: 'Aarón Fernández Ramón — Computer Engineering and AI',
+          description: 'Professional portfolio of Aarón Fernández Ramón, a computer engineer specialising in computer vision, vision-language models and artificial intelligence agent systems.',
+          ogDescription: 'Artificial intelligence models transformed into reliable, measurable and useful systems.',
+          locale: 'en_US',
+          jobTitle: 'Computer engineer and artificial intelligence specialist',
+          knowsAbout: ['Artificial intelligence', 'Computer vision', 'Deep learning', 'Panoptic segmentation', 'Object detection', 'Vision-language models', 'Artificial intelligence agents', 'Generative AI', 'Data analysis', 'GIS']
+        }
+      };
+
+      const interfaceText = {
+        es: {
+          openMenu: 'Abrir menú',
+          closeMenu: 'Cerrar menú',
+          copyAddress: 'Copiar dirección',
+          copied: 'Copiado',
+          manualCopy: 'Copia manualmente',
+          copiedStatus: 'Dirección de correo copiada.',
+          emailStatus: 'Correo'
+        },
+        en: {
+          openMenu: 'Open menu',
+          closeMenu: 'Close menu',
+          copyAddress: 'Copy address',
+          copied: 'Copied',
+          manualCopy: 'Copy manually',
+          copiedStatus: 'Email address copied.',
+          emailStatus: 'Email'
+        }
+      };
+
+      const translatedTextNodes = [];
+      const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      let textNode;
+      while ((textNode = textWalker.nextNode())) {
+        if (textNode.parentElement?.closest('script, style, noscript, svg')) continue;
+        const match = textNode.nodeValue.match(/^(\s*)(.*?)(\s*)$/s);
+        const source = match?.[2];
+        if (!source || !english[source]) continue;
+        translatedTextNodes.push({ node: textNode, before: match[1], source, after: match[3] });
+      }
+
+      const translatedAttributes = [...document.querySelectorAll('[aria-label]')]
+        .map((element) => ({ element, source: element.getAttribute('aria-label') }))
+        .filter(({ source }) => attributeTranslations[source]);
+
+      const profileSchemaElement = document.querySelector('script[type="application/ld+json"]');
+      const profileSchema = profileSchemaElement ? JSON.parse(profileSchemaElement.textContent) : null;
+      let currentLanguage = 'es';
+
+      const updateMenuLabel = () => {
+        if (!menuLabel) return;
+        const isOpen = menuButton?.getAttribute('aria-expanded') === 'true';
+        menuLabel.textContent = isOpen ? interfaceText[currentLanguage].closeMenu : interfaceText[currentLanguage].openMenu;
+      };
+
+      const applyLanguage = (language, updateUrl = true) => {
+        currentLanguage = language === 'en' ? 'en' : 'es';
+        const pageMetadata = metadata[currentLanguage];
+
+        translatedTextNodes.forEach(({ node, before, source, after }) => {
+          node.nodeValue = `${before}${currentLanguage === 'en' ? english[source] : source}${after}`;
+        });
+        translatedAttributes.forEach(({ element, source }) => {
+          element.setAttribute('aria-label', currentLanguage === 'en' ? attributeTranslations[source] : source);
+        });
+
+        document.documentElement.lang = currentLanguage;
+        document.title = pageMetadata.title;
+        document.querySelector('meta[name="description"]')?.setAttribute('content', pageMetadata.description);
+        document.querySelector('meta[property="og:title"]')?.setAttribute('content', pageMetadata.title);
+        document.querySelector('meta[property="og:description"]')?.setAttribute('content', pageMetadata.ogDescription);
+        document.querySelector('meta[property="og:locale"]')?.setAttribute('content', pageMetadata.locale);
+
+        if (profileSchema && profileSchemaElement) {
+          profileSchema.jobTitle = pageMetadata.jobTitle;
+          profileSchema.knowsAbout = pageMetadata.knowsAbout;
+          profileSchemaElement.textContent = JSON.stringify(profileSchema, null, 2);
+        }
+
+        languageButtons.forEach((button) => {
+          button.setAttribute('aria-pressed', String(button.dataset.language === currentLanguage));
+        });
+
+        if (downloadLink) {
+          downloadLink.href = downloadLink.dataset[currentLanguage === 'en' ? 'downloadEn' : 'downloadEs'];
+          downloadLink.download = downloadLink.dataset[currentLanguage === 'en' ? 'filenameEn' : 'filenameEs'];
+        }
+
+        updateMenuLabel();
+
+        try {
+          localStorage.setItem('portfolio-language', currentLanguage);
+        } catch (_) {}
+
+        if (updateUrl) {
+          const url = new URL(window.location.href);
+          if (currentLanguage === 'en') url.searchParams.set('lang', 'en');
+          else url.searchParams.delete('lang');
+          history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+        }
+      };
+
+      const queryLanguage = new URLSearchParams(window.location.search).get('lang');
+      let savedLanguage;
+      try {
+        savedLanguage = localStorage.getItem('portfolio-language');
+      } catch (_) {}
+      const browserLanguage = navigator.language?.toLowerCase().startsWith('en') ? 'en' : 'es';
+      const initialLanguage = ['es', 'en'].includes(queryLanguage)
+        ? queryLanguage
+        : (['es', 'en'].includes(savedLanguage) ? savedLanguage : browserLanguage);
+      applyLanguage(initialLanguage, queryLanguage !== initialLanguage);
+
+      languageButtons.forEach((button) => {
+        button.addEventListener('click', () => applyLanguage(button.dataset.language));
+      });
 
       const setMenu = (open) => {
         if (!menuButton || !navLinks) return;
         menuButton.setAttribute('aria-expanded', String(open));
         navLinks.classList.toggle('is-open', open);
-        if (menuLabel) menuLabel.textContent = open ? 'Cerrar menú' : 'Abrir menú';
+        updateMenuLabel();
       };
 
       menuButton?.addEventListener('click', () => {
@@ -1968,11 +2408,11 @@
           copied = fallbackCopy(email);
         }
 
-        const original = 'Copiar dirección';
-        copyButton.childNodes[0].textContent = copied ? ' Copiado ' : ' Copia manualmente ';
-        if (copyStatus) copyStatus.textContent = copied ? 'Dirección de correo copiada.' : `Correo: ${email}`;
+        const messages = interfaceText[currentLanguage];
+        copyButton.childNodes[0].textContent = copied ? ` ${messages.copied} ` : ` ${messages.manualCopy} `;
+        if (copyStatus) copyStatus.textContent = copied ? messages.copiedStatus : `${messages.emailStatus}: ${email}`;
         window.setTimeout(() => {
-          copyButton.childNodes[0].textContent = ` ${original} `;
+          copyButton.childNodes[0].textContent = ` ${interfaceText[currentLanguage].copyAddress} `;
         }, 2200);
       });
 

@@ -1,6 +1,6 @@
 # Carta de presentación profesional — Aarón Fernández
 
-Portfolio estático y responsive construido a partir del currículum facilitado. La página prioriza el perfil de ingeniería informática e inteligencia artificial, con una dirección visual cálida, minimalista y un elemento principal de *liquid metal*.
+Portfolio estático, bilingüe y responsive construido a partir del currículum facilitado. La página prioriza el perfil de ingeniería informática e inteligencia artificial, con una dirección visual cálida, minimalista y un elemento principal de *liquid metal*. Incluye selector ES/EN, detección del idioma del navegador, persistencia local y enlaces compartibles mediante `?lang=en`.
 
 ## Vista local
 
@@ -25,7 +25,7 @@ Todo el contenido, los estilos y las interacciones están dentro de `index.html`
 
 ## Contenido incluido
 
-La versión actual incorpora el perfil, trabajo en Gemminis, formación, certificados, experiencia adicional, idiomas, permiso de conducir y los proyectos Human-TrAIts y TFGTiempoReal. Los enlaces de LinkedIn y GitHub se han contrastado con el PDF y con los repositorios públicos.
+La versión actual incorpora el perfil, trabajo en Gemminis, formación, certificados, experiencia adicional, idiomas y permiso de conducir. El trabajo seleccionado incluye el TFG de detección de riesgos, el TFM de segmentación panóptica, un VLM de validación contextual, un ecosistema de agentes con memoria persistente, un sistema de eye-tracking, prototipos web con IA, Human-TrAIts y aplicaciones profesionales de visión artificial. También enlaza la difusión del TFG en Última Hora e IB3 Ràdio.
 
 Para futuras actualizaciones basta con facilitar, por cada novedad: título, organización, periodo, descripción breve, tecnologías, resultado medible y enlace público si existe. Los hitos más relevantes pueden promocionarse al bloque de trabajo seleccionado sin rehacer el diseño.
 
